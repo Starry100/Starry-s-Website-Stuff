@@ -1,8 +1,8 @@
+/* Stuff to make it center */
 * {
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
-
 hr {
     color: white;
 }
@@ -16,6 +16,7 @@ body {
     width: 100%;
 }
 
+/* The main structure of the website */
 .cardMain {
     display: flex;
     flex-direction: row;
@@ -64,32 +65,6 @@ body {
     }
 }
 
-.asideLink {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-
-.asideItem {
-    display: flex;
-    margin: 0.2rem;
-    transition: border-bottom ease 0.2s, background-color ease-in 0.3s;
-}
-
-.asideItem:hover {
-    background-color: rgba(56, 135, 196, 0.6);
-    backdrop-filter: blur(2px);
-    border-bottom: 5px solid #7daacc;
-    cursor: pointer;
-}
-
-div[class*=asideItem] {
-    display: flex;
-    flex-direction: row;
-    margin: 0.4rem;
-    background-color: rgba(131, 150, 165, 0.6);
-    backdrop-filter: blur(2px);
-}
-
 .gridHeading {
     padding-left: 1rem;
     display: flex;
@@ -126,23 +101,6 @@ div[class*=asideItem] {
     }
 }
 
-.contentParagraph,
-.contentList {
-    margin-left: 2rem;
-    font-size: 1.1rem;
-    margin-bottom: 1.3rem;
-
-    li {
-        margin-bottom: 0.5rem;
-    }
-}
-
-.contentUpdates {
-    background-color: #74b4dc;
-    margin: 2rem;
-    padding: 1rem;
-}
-
 .gridMain-lyrics {
     display: flex;
     margin: 0.5rem;
@@ -161,21 +119,12 @@ div[class*=asideItem] {
     }
 }
 
-.favAlbum {
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    position: sticky;
-    padding: 1rem;
-    height: 25rem;
-    background-color: rgba(61, 108, 144, 0.5);
-
-    .newAlbum {
-        width: 20rem;
-        object-fit: contain;
-    }
+.gridFooter {
+    grid-area: footer;
+    background-color: #6594B1;
 }
 
+/* For the Javascript to work */
 .gridSection1 {
     overflow-y: auto;
     display: flex;
@@ -191,58 +140,117 @@ div[class*=asideItem] {
     display: none;
 }
 
-.subContent {
-    display: flex;
-    margin: 2rem;
-    img {
-        border-radius: 25%;
+/* The CSS below are for the div/span/etc. elements inside the main Grid elements */
+/* For the Side Bar (gridAside) */
+    .asideLink {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
     }
-}
-.subContentInterests, .subContentFandoms{
-    border: 0.5rem #a6d6f3 double;
-    p {
-        margin: 0;
+
+    .asideItem {
+        display: flex;
+        margin: 0.2rem;
+        transition: border-bottom ease 0.2s, background-color ease-in 0.3s;
+    }
+
+    .asideItem:hover {
+        background-color: rgba(56, 135, 196, 0.6);
+        backdrop-filter: blur(2px);
+        border-bottom: 5px solid #7daacc;
+        cursor: pointer;
+    }
+
+    div[class*=asideItem] {
+        display: flex;
+        flex-direction: row;
+        margin: 0.4rem;
+        background-color: rgba(131, 150, 165, 0.6);
+        backdrop-filter: blur(2px);
+    }
+
+/* For Main, and basically the CSS used for the rest of the pages */
+    .contentParagraph,
+    .contentList {
+        margin-left: 2rem;
+        font-size: 1.1rem;
+        margin-bottom: 1.3rem;
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .contentUpdates {
+        background-color: #74b4dc;
+        margin: 2rem;
         padding: 1rem;
     }
-}
 
-.subSocials {
-    display: flex;
-    padding: 10vw;
-    margin: 2rem;
-    flex-wrap: wrap;
-    border: 10px rgb(174, 204, 232) double;
-    background-image: url("https://static.wikia.nocookie.net/houkai-star-rail/images/5/5f/Light_Cone_This_Love%2C_Forever_Artwork.png/revision/latest?cb=20251105032920");
-    background-position: center;
-    background-size: contain;
-    background-color: #77598e;
-    background-blend-mode: multiply;
-}
+    /* For Page 1 */
+        .favAlbum {
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            position: sticky;
+            padding: 1rem;
+            height: 25rem;
+            background-color: rgba(61, 108, 144, 0.5);
 
-.subSocialsItem {
-    flex-grow: 1;
-    background-color: rgba(69, 130, 177, 0.5);
-    backdrop-filter: blur(10px);
-    padding: 1rem;
-    margin: 0.3rem;
-    transition: transform ease-in 0.2s, background-color ease-in 0.3s;
-     h2, p {
-        color: white;
-    }
+            .newAlbum {
+                width: 20rem;
+                object-fit: contain;
+            }
+        }
 
-}
-.subSocialsItem:hover {
-    background-color: #78a5c6;
-    transform: translateY(-10px);
+    /* For Page 2 */
+        .subContent {
+            display: flex;
+            margin: 2rem;
+            img {
+                border-radius: 25%;
+            }
+        }
+        .subContentInterests, .subContentFandoms{
+            border: 0.5rem #a6d6f3 double;
+            p {
+                margin: 0;
+                padding: 1rem;
+            }
+        }
 
-}
+    /* For Page 3 */
+        .subSocials {
+            display: flex;
+            padding: 10vw;
+            margin: 2rem;
+            flex-wrap: wrap;
+            border: 10px rgb(174, 204, 232) double;
+            background-image: url("https://static.wikia.nocookie.net/houkai-star-rail/images/5/5f/Light_Cone_This_Love%2C_Forever_Artwork.png/revision/latest?cb=20251105032920");
+            background-position: center;
+            background-size: contain;
+            background-color: #77598e;
+            background-blend-mode: multiply;
+        }
 
-.gridFooter {
-    grid-area: footer;
-    background-color: #6594B1;
-}
+        .subSocialsItem {
+            flex-grow: 1;
+            background-color: rgba(69, 130, 177, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            margin: 0.3rem;
+            transition: transform ease-in 0.2s, background-color ease-in 0.3s;
+            h2, p {
+                color: white;
+            }
 
+        }
+        .subSocialsItem:hover {
+            background-color: #78a5c6;
+            transform: translateY(-10px);
 
+        }
+
+/* Media Query */
 @media only screen and (max-width: 900px) {
     h1 {
          font-size: min(6vw, 3rem) !important;
