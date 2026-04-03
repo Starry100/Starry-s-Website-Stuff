@@ -1,0 +1,342 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+hr {
+    color: white;
+}
+body {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.cardMain {
+    display: flex;
+    flex-direction: row;
+    color: #EEEEEE;
+    padding: 5%;
+    height: 50rem;
+}
+
+.gridItems {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-areas:
+        'heading heading'
+        'aside main'
+        'aside footer'
+    ;
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+.gridAside {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    grid-area: aside;
+    background-image: url("https://i.pinimg.com/736x/50/66/c4/5066c4e36d6e0e419fe9ab4e4142de78.jpg");
+    background-blend-mode: multiply;
+    background-color: rgba(33, 60, 81, 0.6);
+
+    ul {
+        list-style-type: none;
+    }
+
+    .asideIcons {
+        margin-left: 1rem;
+        margin-right: 0.5rem;
+        width: 2rem;
+        object-fit: contain;
+    }
+}
+
+.asideLink {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.asideItem {
+    display: flex;
+    margin: 0.2rem;
+    transition: border-bottom ease 0.2s, background-color ease-in 0.3s;
+}
+
+.asideItem:hover {
+    background-color: rgba(56, 135, 196, 0.6);
+    backdrop-filter: blur(2px);
+    border-bottom: 5px solid #7daacc;
+    cursor: pointer;
+}
+
+div[class*=asideItem] {
+    display: flex;
+    flex-direction: row;
+    margin: 0.4rem;
+    background-color: rgba(131, 150, 165, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+.gridHeading {
+    padding-left: 1rem;
+    display: flex;
+    grid-area: heading;
+    background-color: #6594B1;
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+.gridMain {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    grid-area: main;
+    background-image: linear-gradient(to bottom, #3d6c90, #81abc6);
+
+    .gridContent {
+        display: flex;
+
+        .contentHeading {
+            font-size: 2rem;
+            margin-left: 1rem;
+        }
+    }
+}
+
+.gridArticle {
+    img {
+        margin-left: 2rem;
+        width: min(50%, 20rem);
+        object-fit: contain;
+    }
+}
+
+.contentParagraph,
+.contentList {
+    margin-left: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.3rem;
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.contentUpdates {
+    background-color: #74b4dc;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+.gridMain-lyrics {
+    display: flex;
+    margin: 0.5rem;
+    border: 3px dotted #a6d6f3;
+
+    .phaiicon {
+        margin-left: 1%;
+        width: 10rem;
+        object-fit: contain;
+    }
+
+    p {
+        margin: 0.5rem;
+        color: #a6d6f3;
+        padding-right: 2rem;
+    }
+}
+
+.favAlbum {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    position: sticky;
+    padding: 1rem;
+    height: 25rem;
+    background-color: rgba(61, 108, 144, 0.5);
+
+    .newAlbum {
+        width: 20rem;
+        object-fit: contain;
+    }
+}
+
+.gridSection1 {
+    overflow-y: auto;
+    display: flex;
+}
+
+.gridSection2 {
+    overflow-y: auto;
+    display: none;
+}
+
+.gridSection3 {
+    overflow-y: auto;
+    display: none;
+}
+
+.subContent {
+    display: flex;
+    margin: 2rem;
+    img {
+        border-radius: 25%;
+    }
+}
+.subContentInterests, .subContentFandoms{
+    border: 0.5rem #a6d6f3 double;
+    p {
+        margin: 0;
+        padding: 1rem;
+    }
+}
+
+.subSocials {
+    display: flex;
+    padding: 10vw;
+    margin: 2rem;
+    flex-wrap: wrap;
+    border: 10px rgb(174, 204, 232) double;
+    background-image: url("https://static.wikia.nocookie.net/houkai-star-rail/images/5/5f/Light_Cone_This_Love%2C_Forever_Artwork.png/revision/latest?cb=20251105032920");
+    background-position: center;
+    background-size: contain;
+    background-color: #77598e;
+    background-blend-mode: multiply;
+}
+
+.subSocialsItem {
+    flex-grow: 1;
+    background-color: rgba(69, 130, 177, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    margin: 0.3rem;
+    transition: transform ease-in 0.2s, background-color ease-in 0.3s;
+     h2, p {
+        color: white;
+    }
+
+}
+.subSocialsItem:hover {
+    background-color: #78a5c6;
+    transform: translateY(-10px);
+
+}
+
+.gridFooter {
+    grid-area: footer;
+    background-color: #6594B1;
+}
+
+
+@media only screen and (max-width: 900px) {
+    h1 {
+         font-size: min(6vw, 3rem) !important;
+    }
+    h2 {
+        font-size: min(6vw, 3rem) !important;
+    }
+
+    p, li {
+        font-size: min(4vw, 1rem) !important;
+    }
+    
+    body {
+        position: static;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: auto;
+    }
+    .asideItem{
+    p {
+        display: none;
+       }
+    }
+    .asideIcons{
+        margin: 0;
+        padding: 1rem;
+        width: 100rem;
+    }
+    .gridItems {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'heading'
+            'aside'
+            'main'
+            'footer'
+        ;
+        height: 95vh;
+        overflow-x: auto;
+    }
+
+    .gridContent {
+        flex-direction: column;
+    }
+
+    .favAlbum {
+        top: auto;
+        position: auto;
+        height: 42vw;
+        align-items: center;
+        justify-items: center;
+
+        .newAlbum {
+            width: min(50%, 20rem);
+        }
+    }
+    .subAlbum {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .gridArticle {
+        padding: 0;
+    }
+
+    .contentHeading,
+    .contentParagraph {
+        margin-right: 2rem;
+    }
+
+    .gridMain-lyrics {
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+
+        .phaiicon {
+            width: clamp(1rem, 20vw, 100vw);
+        }
+    }
+
+    .gridAside {
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .subContent {
+        flex-direction: column;
+    }
+    .contentUpdates {
+        background-color: #74b4dc;
+        margin: auto;
+        padding: 1rem;
+    }
+}
