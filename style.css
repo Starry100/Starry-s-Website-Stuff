@@ -49,9 +49,12 @@ body {
     align-content: center;
     justify-content: center;
     grid-area: aside;
-    background-image: url("https://i.pinimg.com/736x/50/66/c4/5066c4e36d6e0e419fe9ab4e4142de78.jpg");
+    background-image: url("https://i.pinimg.com/736x/12/a1/b2/12a1b29e6e06c57c1041b66d9cb6a85c.jpg");
+    border: 6px #b2d3e8 double;
+    background-position: center;
+    background-size: cover;
     background-blend-mode: multiply;
-    background-color: rgba(33, 60, 81, 0.6);
+    background-color: rgba(19, 100, 143, 0.7);
 
     ul {
         list-style-type: none;
@@ -66,11 +69,10 @@ body {
 }
 
 .gridHeading {
+    background-image: linear-gradient(to bottom, #75c4d6, #4e88ac);
     padding-left: 1rem;
     display: flex;
     grid-area: heading;
-    background-color: #6594B1;
-
     h1 {
         font-size: 3rem;
     }
@@ -81,17 +83,21 @@ body {
     flex-direction: column;
     overflow-x: auto;
     grid-area: main;
-    background-image: linear-gradient(to bottom, #3d6c90, #81abc6);
+    background-image: url("https://i.pinimg.com/originals/4a/37/15/4a371524cf385c297c035eb119717cd6.gif");
+    background-position: center;
+    background-size: 79rem;
+    background-repeat: no-repeat;
+    background-color: rgba(17, 43, 82, 0.7);
+    background-blend-mode: multiply;
+}
 
-    .gridContent {
+.gridContent {
         display: flex;
-
         .contentHeading {
             font-size: 2rem;
             margin-left: 1rem;
         }
-    }
-}
+ }
 
 .gridArticle {
     img {
@@ -150,7 +156,7 @@ body {
     .asideItem {
         display: flex;
         margin: 0.2rem;
-        transition: border-bottom ease 0.2s, background-color ease-in 0.3s;
+        transition: border-bottom ease 0.2s, background-color ease-in 0.3s, backdrop-filter 0.6s;
     }
 
     .asideItem:hover {
@@ -158,6 +164,7 @@ body {
         backdrop-filter: blur(2px);
         border-bottom: 5px solid #7daacc;
         cursor: pointer;
+        
     }
 
     div[class*=asideItem] {
@@ -165,7 +172,7 @@ body {
         flex-direction: row;
         margin: 0.4rem;
         background-color: rgba(131, 150, 165, 0.6);
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(10px);
     }
 
 /* For Main, and basically the CSS used for the rest of the pages */
@@ -181,7 +188,7 @@ body {
     }
 
     .contentUpdates {
-        background-color: #74b4dc;
+        background-color: rgba(116, 180, 220, 0.5);
         margin: 2rem;
         padding: 1rem;
     }
@@ -194,8 +201,8 @@ body {
             position: sticky;
             padding: 1rem;
             height: 25rem;
-            background-color: rgba(61, 108, 144, 0.5);
-
+            background-color: rgba(208, 91, 103, 0.5);
+            backdrop-filter: blur(3px);
             .newAlbum {
                 width: 20rem;
                 object-fit: contain;
@@ -225,10 +232,10 @@ body {
             margin: 2rem;
             flex-wrap: wrap;
             border: 10px rgb(174, 204, 232) double;
-            background-image: url("https://static.wikia.nocookie.net/houkai-star-rail/images/5/5f/Light_Cone_This_Love%2C_Forever_Artwork.png/revision/latest?cb=20251105032920");
+            background-image: url("https://i.pinimg.com/originals/97/25/39/97253941a874955f10c180764759d2cd.gif");
             background-position: center;
-            background-size: contain;
-            background-color: #77598e;
+            background-size: cover;
+            background-color: rgba(15, 49, 75, 0.7);
             background-blend-mode: multiply;
         }
 

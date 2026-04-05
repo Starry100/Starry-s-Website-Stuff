@@ -13,21 +13,21 @@
         <div class="gridItems">
             <!--This section is for the Sidebar-->
             <div class="gridAside">
-                <a class="asideLink" onclick="showHome()">
+                <a class="asideLink" onclick="showSection('home')">
                     <div class="asideItem">
                         <img class="asideIcons"
                             src="https://static.wikia.nocookie.net/houkai-star-rail/images/7/75/Icon_Curio.png/revision/latest?cb=20240130222543">
                         <p>Home</p>
                     </div>
                 </a>
-                <a class="asideLink" onclick="showInterests()">
+                <a class="asideLink" onclick="showSection('interests')">
                     <div class="asideItem">
                         <img class="asideIcons"
                             src="https://static.wikia.nocookie.net/houkai-star-rail/images/7/7f/Icon_Bookshelf.png/revision/latest?cb=20240215234856">
                         <p>Interests & Me</p>
                     </div>
                 </a>
-                <a class="asideLink" onclick="showAboutMe()">
+                <a class="asideLink" onclick="showSection('aboutme')">
                     <div class="asideItem">
                         <img class="asideIcons"
                             src="https://static.wikia.nocookie.net/houkai-star-rail/images/7/74/Icon_Shop_Starlight_Exchange.png/revision/latest?cb=20240505202348">
@@ -46,18 +46,18 @@
             <div id="home" class="gridSection1">
                 <div class="gridMain">
                     <!--Lyrics for Page 1-->
-                    <div class="gridMain-lyrics">
-                        <div>
-                            <img class="phaiicon"
-                                src="https://static.wikia.nocookie.net/houkai-star-rail/images/e/ea/Sticker_PPG_Luckin_Coffee_Phainon_04.png/revision/latest/scale-to-width-down/1000?cb=20251103212225">
-                        </div>
-                        <div>
-                            <p>Anyway,</p>
-                            <p>I am not an esper.</p>
-                            <p>SSo I can neiithHer read anyone's mind.</p>
-                            <p>Nor cheat myself.</p>
-                        </div>
-                    </div>
+                     <div class="gridMain-lyrics">
+                                <div>
+                                    <img class="phaiicon"
+                                        src="https://static.wikia.nocookie.net/houkai-star-rail/images/e/ea/Sticker_PPG_Luckin_Coffee_Phainon_04.png/revision/latest/scale-to-width-down/1000?cb=20251103212225">
+                                </div>
+                                <div>
+                                    <p>Anyway,</p>
+                                    <p>I am not an esper.</p>
+                                    <p>SSo I can neiithHer read anyone's mind.</p>
+                                    <p>Nor cheat myself.</p>
+                                </div>
+                            </div>
                     <!--Main Content for Page 1-->
                     <span class="gridContent">
                         <article class="gridArticle">
@@ -110,9 +110,9 @@
                         </article>
                         <figure class="favAlbum">
                             <img class="newAlbum"
-                                src="https://i.pinimg.com/1200x/ad/b9/5a/adb95ae59ec48a878a82b3bfc338087f.jpg">
+                                src="https://media1.tenor.com/m/maIP0Ya9HUMAAAAd/seaside-beach.gif">
                             <figcaption>
-                                <p>To See The Next Part of the Dream</p>
+                                <p>Alohaii - SUMMERTIDE</p>
                             </figcaption>
                         </figure>
                     </span>
@@ -276,31 +276,30 @@
         </div>
     </div>
     <script>
-        function showHome() {
-            let mainElement = document.getElementById("home");
-            let secondElement = document.getElementById("interests");
-            let thirdElement = document.getElementById("aboutme");
-            mainElement.style.display = "flex"
-            secondElement.style.display = "none"
-            thirdElement.style.display = "none"
-        }
+        const backgroundElement = document.querySelector(".gridMain");
+        const mainElement = document.getElementById("home");
+        const secondElement = document.getElementById("interests");
+        const thirdElement = document.getElementById("aboutme");
 
-        function showInterests() {
-            let mainElement = document.getElementById("home");
-            let secondElement = document.getElementById("interests");
-            let thirdElement = document.getElementById("aboutme");
-            mainElement.style.display = "none"
-            secondElement.style.display = "flex"
-            thirdElement.style.display = "none"
-        }
+        function showSection(nameId) {
 
-        function showAboutMe() {
-            let mainElement = document.getElementById("home");
-            let secondElement = document.getElementById("interests");
-            let thirdElement = document.getElementById("aboutme");
-            mainElement.style.display = "none"
-            secondElement.style.display = "none"
-            thirdElement.style.display = "flex"
+            switch (nameId) {
+                case "home":
+                    mainElement.style.display = "flex"
+                    secondElement.style.display = "none"
+                    thirdElement.style.display = "none"
+                    break;
+                case "interests":
+                    mainElement.style.display = "none"
+                    secondElement.style.display = "flex"
+                    thirdElement.style.display = "none"
+                    break;
+                case "aboutme":
+                    mainElement.style.display = "none"
+                    secondElement.style.display = "none"
+                    thirdElement.style.display = "flex"
+                    break;
+            }
         }
     </script>
 </body>
