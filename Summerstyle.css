@@ -1,8 +1,28 @@
 /* Stuff to make it center */
 * {
-    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
+
+h1 {
+    font-family: "Lexend", sans-serif;
+    font-weight: 800;
+}
+
+h2, h3 {
+    font-family: "Lexend", sans-serif;
+    font-weight: 650;
+}   
+
+p, li {
+    font-family: "Lexend", sans-serif;
+    font-weight: 270;
+}
+
+strong {
+    font-weight: 700;
+    color: rgb(195, 224, 238);
+}
+
 hr {
     color: white;
 }
@@ -63,9 +83,11 @@ body {
     .asideIcons {
         margin-left: 1rem;
         margin-right: 0.5rem;
-        width: 2rem;
+        width: 3rem;
         object-fit: contain;
-    }
+}
+
+
 }
 
 .gridHeading {
@@ -187,6 +209,11 @@ body {
         }
     }
 
+    .contentCaption {
+        font-size: clamp(10%, 1.5rem, 2rem);
+    }
+
+
     .contentUpdates {
         background-color: rgba(116, 180, 220, 0.5);
         margin: 2rem;
@@ -259,33 +286,33 @@ body {
 
 /* Media Query */
 @media only screen and (max-width: 900px) {
-    h1 {
-         font-size: min(6vw, 3rem) !important;
-    }
-    h2 {
-        font-size: min(6vw, 3rem) !important;
+    
+    h1, h2{ 
+        font-size: min(2rem, 3rem) !important;
     }
 
     p, li {
-        font-size: min(4vw, 1rem) !important;
+        font-size: 1rem !important;
     }
-    
+
     body {
         position: static;
         left: auto;
         top: auto;
         transform: none;
         width: auto;
+           overflow-wrap: break-word;
     }
     .asideItem{
     p {
         display: none;
        }
     }
-    .asideIcons{
-        margin: 0;
-        padding: 1rem;
-        width: 100rem;
+
+    .gridHeading{
+        h1 {
+            font-size: min(6vw, 3rem);
+        }
     }
     .gridItems {
         grid-template-columns: 1fr;
@@ -333,10 +360,16 @@ body {
         flex-direction: column;
         justify-items: center;
         align-items: center;
-
         .phaiicon {
             width: clamp(1rem, 20vw, 100vw);
         }
+    }
+
+    .asideIcons{
+        margin: 0.1rem !important;
+        padding: 0.5rem;
+        width: min(5rem, 2rem)  !important;
+        width: auto;
     }
 
     .gridAside {
@@ -344,13 +377,14 @@ body {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+
+        
     }
 
     .subContent {
         flex-direction: column;
     }
     .contentUpdates {
-        background-color: #74b4dc;
         margin: auto;
         padding: 1rem;
     }
